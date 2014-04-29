@@ -1,0 +1,17 @@
+Config  { font = "xft:Monospace:pixelsize=10"
+        , position = TopSize L 95 16 
+	, bgColor = "black"
+        , fgColor = "#777777"
+        , commands = [
+                -- Addison, TX
+                Run Weather "KRNT" ["-t","<tempF>F","-L","45","-H","70","--normal","#6BE400","--high","#E20048","--low","#0A64A4"] 36000,
+                Run Cpu ["-t","CPU:<total>%","-L","0","-H","90","--normal","#6BE400","--high","#E20048"] 10,
+                Run Memory ["-t","MEM:<fc=#6BE400><usedratio></fc>%"] 10,
+                Run Date "%m/%d/%y %I:%M" "date" 10,
+                Run Network "eth0" ["-t","<dev>:<fc=#6BE400><rx></fc>KB-<fc=#6BE400><tx></fc>KB"] 10,
+                Run StdinReader
+                ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% }{%eth0%<fc=#0A64A4>|</fc>%cpu%<fc=#0A64A4>|</fc>%memory%<fc=#0A64A4>|</fc>%KRNT%<fc=#0A64A4>|</fc><fc=#ee9a00>%date%</fc>"
+       }
