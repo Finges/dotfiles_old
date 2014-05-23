@@ -36,7 +36,7 @@ import XMonad.Layout.Grid
 -- Main --
 main :: IO ()
 main = xmonad =<< statusBar cmd pp kb conf
-  where 
+  where
     uhook = withUrgencyHookC NoUrgencyHook urgentConfig
     cmd = "bash -c \"tee >(xmobar -x0) | xmobar -x1\""
     pp = customPP
@@ -64,8 +64,8 @@ manageHook' = composeAll [ isFullscreen             --> doFullFloat
                          , className =? "Gimp"      --> doFloat
                          , className =? "Vlc"       --> doFloat
                          , className =? "Pidgin"    --> doShift "4:PIDGIN"
-			 , insertPosition Below Newer
-			 , transience'
+       , insertPosition Below Newer
+       , transience'
                          ]
 
 
@@ -100,7 +100,7 @@ tabTheme1 = defaultTheme { decoHeight = 16
          }
 
 -- workspaces
-workspaces' = ["1:MAIN","2:DEV","3:CHATS","4:PIDGIN","5:MEDIA","6:AUDIO","7","8","9"]
+workspaces' = ["1:MAINY","2:DEV","3:CHATS","4:PIDGIN","5:MEDIA","6:AUDIO","7","8","9"]
 
 -- layouts
 layoutHook' = onWorkspace "4:PIDGIN" imLayout $ standardLayouts
@@ -153,24 +153,24 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
     -- focus
     , ((modMask,               xK_Tab   ), windows W.focusDown)
-    , ((modMask,               xK_j     ), windows W.focusDown)
-    , ((modMask,               xK_k     ), windows W.focusUp)
+    , ((modMask,               xK_Left     ), windows W.focusDown)
+    , ((modMask,               xK_Right    ), windows W.focusUp)
     , ((modMask,               xK_m     ), windows W.focusMaster)
 
     -- swapping
-    , ((modMask .|. shiftMask, xK_Return), windows W.swapMaster)
-    , ((modMask .|. shiftMask, xK_j     ), windows W.swapDown  )
-    , ((modMask .|. shiftMask, xK_k     ), windows W.swapUp    )
+    , ((modMask .|. shiftMask, xK_Return  ), windows W.swapMaster)
+    , ((modMask .|. shiftMask, xK_Left     ), windows W.swapDown  )
+    , ((modMask .|. shiftMask, xK_Right    ), windows W.swapUp    )
 
     -- increase or decrease number of windows in the master area
     , ((modMask              , xK_comma ), sendMessage (IncMasterN 1))
     , ((modMask              , xK_period), sendMessage (IncMasterN (-1)))
 
     -- resizing
-    , ((modMask,               xK_h     ), sendMessage Shrink)
-    , ((modMask,               xK_l     ), sendMessage Expand)
-    , ((modMask .|. shiftMask, xK_h     ), sendMessage MirrorShrink)
-    , ((modMask .|. shiftMask, xK_l     ), sendMessage MirrorExpand)
+    , ((modMask,               xK_Down     ), sendMessage Shrink)
+    , ((modMask,               xK_Up     ), sendMessage Expand)
+    , ((modMask .|. shiftMask, xK_Down     ), sendMessage MirrorShrink)
+    , ((modMask .|. shiftMask, xK_Up     ), sendMessage MirrorExpand)
 
     -- quit, or restart
     , ((modMask .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
@@ -182,11 +182,10 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     [((m .|. modMask, k), windows $ f i)
         | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
         , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
-    ++
+--    ++
     -- mod-[w,e] %! switch to twinview screen 1/2
     -- mod-shift-[w,e] %! move window to screen 1/2
-    [((m .|. modMask, key), screenWorkspace sc >>= flip whenJust (windows . f))
-        | (key, sc) <- zip [xK_w, xK_e] [0..]
-        , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
+--    [((m .|. modMask, key), screenWorkspace sc >>= flip whenJust (windows . f))
+--        | (key, sc) <- zip [xK_w, xK_e] [0..]
+--        , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
 
--------------------------------------------------------------------------------
