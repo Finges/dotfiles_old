@@ -47,3 +47,11 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/home/finges/.local/bin
 
+# Environment Variables
+export PYTHONPATH=/usr/lib/python3.4/site-packages/
+
+# Aliases
+alias startx='ssh-agent startx'
+
+
+
