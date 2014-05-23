@@ -119,7 +119,7 @@ layoutHook' = onWorkspace "4:PIDGIN" imLayout $ standardLayouts
 
 -------------------------------------------------------------------------------
 -- Terminal --
-terminal' = "termite"
+terminal' = "urxvt"
 
 -------------------------------------------------------------------------------
 -- Keys/Button bindings --

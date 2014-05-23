@@ -1,14 +1,14 @@
 
 !--- Font ---!
-URxvt*font:		xft:Dejavu Sans Mono for Powerline:size=9
-URxvt.letterSpace:	-4
-Xft.dpi:		99
-Xft.autohint:		0
-Xft.lcdfilter:		lcddefault
-Xft.hintstyle:		hintfull
-Xft.hinting:		1
-Xft.antialias:		1
-Xft.rgba:		rgb
+URxvt*font:   xft:Inconsolata for Powerline:style=regular:size=11
+URxvt.letterSpace:  -1.5
+Xft.dpi:    96
+Xft.autohint:  true
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintfull
+Xft.hinting:   true
+Xft.antialias: true
+Xft.rgba:      rgb
 
 !--- Scrolling ---!
 URxvt*scrollBar: false
@@ -66,7 +66,7 @@ Xcursor.size: 16
 
 
 
-URxvt*intensityStyles:	       false
+URxvt*intensityStyles:         false
 URxvt*background:              S_base03
 URxvt*foreground:              S_base0
 URxvt*fading:                  40

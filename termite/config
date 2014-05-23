@@ -5,11 +5,11 @@ scroll_on_keystroke = true
 audible_bell = false
 visible_bell = false
 mouse_autohide = false
-allow_bold = false 
+allow_bold = true 
 dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
-font = Inconsolata 9
+font = Inconsolata 10
 scrollback_lines = 1000
 search_wrap = true
 #icon_name = terminal
@@ -22,7 +22,7 @@ cursor_blink = system
 cursor_shape = block
 
 # $BROWSER is used by default
-#browser = firefox
+browser = chromium
 
 # word characters used for word selection
 # (default if unset: all graphic non-punctuation/space characters)
@@ -33,7 +33,8 @@ cursor_shape = block
 
 [colors]
 foreground = #839496
-foreground_bold = #fdf6e3
+foreground_bold = #EEE8D5
+#foreground_bold = #fdf6e3
 #foreground_dim = #888888
 background = #002b36
 cursor = #93a1a1
@@ -59,7 +60,6 @@ color13 = #6c71c4
 color14 = #93a1a1
 color15 = #fdf6e3
 
-[hints]
 #font = Monospace 12
 #foreground = #dcdccc
 #background = #3f3f3f

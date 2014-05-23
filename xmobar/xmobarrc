@@ -1,4 +1,4 @@
-Config  { font = "xft:Monospace:pixelsize=10"
+Config  { font = "xft:Monospace:pixelsize=11"
         , position = TopSize L 95 16 
 	, bgColor = "black"
         , fgColor = "#777777"
