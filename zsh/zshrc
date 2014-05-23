@@ -51,7 +51,7 @@ export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/ho
 export PYTHONPATH=/usr/lib/python3.4/site-packages/
 
 # Aliases
-alias startx='ssh-agent startx'
+alias startx='ssh-agent startx > startx.log 2>&1'
 
 
 
