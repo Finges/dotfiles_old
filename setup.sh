@@ -6,4 +6,4 @@ ln -s .dotfiles/xmobar/xmobarrc ~/.xmobarrc
 ln -s .dotfiles/x11/Xresources ~/.Xresources
 ln -s .dotfiles/zsh/zshrc ~/.zshrc
 ln -s .dotfiles/xmonad ~/.xmonad
-
+ln -s .dotfiles/tmux/tmux.conf ~/.tmux.conf
