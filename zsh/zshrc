@@ -55,3 +55,6 @@ alias startx='ssh-agent startx > startx.log 2>&1'
 
 
 
+#RVM
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+source $HOME/.rvm/scripts/rvm
